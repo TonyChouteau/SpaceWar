@@ -1,0 +1,23 @@
+{
+  "name": "spacewar",
+  "version": "1.0.0",
+  "description": "JS Online Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyChouteau/SpaceWar.git"
+  },
+  "author": "Tony CHOUTEAU & Sébastien HERT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonyChouteau/SpaceWar/issues"
+  },
+  "homepage": "https://github.com/TonyChouteau/SpaceWar#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
