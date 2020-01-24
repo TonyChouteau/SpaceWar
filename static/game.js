@@ -5,7 +5,7 @@ socket.on('message', function(data) {
 
 function setup(){
     createCanvas(900, 900);
-    background(0);
+    background(255);
 }
 
 function mousePressed(){
