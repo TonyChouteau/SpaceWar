@@ -1,4 +1,4 @@
-var socket = io("http://localhost:5000");
+var socket = io("https://vps.tonychouteau.fr:5000");
 
 socket.on('message', function (data) {
     console.log(data);
