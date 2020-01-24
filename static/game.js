@@ -1,4 +1,5 @@
-var socket = io("localhost:5000");
+//var socket = io("localhost:5000");
+var socket = io("http://vps.tonychouteau.fr:5000");
 
 var movement = {
     up: false,

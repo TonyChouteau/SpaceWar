@@ -12,6 +12,11 @@ var io = socketIO(server);
 app.set('port', 5000);
 app.use('/static', express.static(__dirname + '/static'));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "vps.tonychouteau.fr"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Routing
 app.get('/', function (request, response) {
