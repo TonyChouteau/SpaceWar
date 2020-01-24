@@ -23,7 +23,17 @@ server.listen(5000, function() {
 });
 
 // Add the WebSocket handlers
-io.on('connection', function(socket) {
-	Console.log('Connection : ',socket);
+io.on('mouse', function(socket) {
+	console.log('Clicked');
   io.sockets.emit('message', 'Done');
 });
+
+// Add the WebSocket handlers
+io.on('new', function(socket) {
+	console.log('Connection');
+  io.sockets.emit('message', 'Done');
+});
+
+setInterval(function() {
+  io.sockets.emit('message', 'hi!');
+}, 1000);

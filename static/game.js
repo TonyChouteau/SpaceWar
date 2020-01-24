@@ -2,6 +2,7 @@ var socket = io();
 socket.on('message', function(data) {
   console.log(data);
 });
+socket.emit('new');
 
 function setup(){
     createCanvas(900, 900);
@@ -9,9 +10,9 @@ function setup(){
 }
 
 function mousePressed(){
-    io.sockets.emit('connection', 'hi!');
+    socket.emit('mouse');
 }
 
-function loop(){
+function draw(){
 
 }
