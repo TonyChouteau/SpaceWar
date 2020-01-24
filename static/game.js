@@ -1,18 +1,19 @@
-var socket = io();
-socket.on('message', function(data) {
-  console.log(data);
-});
-socket.emit('new');
+var socket = io("http://localhost:5000");
 
-function setup(){
+socket.on('message', function (data) {
+    console.log(data);
+});
+
+function setup() {
     createCanvas(900, 900);
     background(255);
 }
 
-function mousePressed(){
+function mousePressed() {
+    console.log("Test");
     socket.emit('mouse');
 }
 
-function draw(){
+function draw() {
 
 }

@@ -13,27 +13,38 @@ app.set('port', 5000);
 app.use('/static', express.static(__dirname + '/static'));
 
 // Routing
-app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname, 'index.html'));
+app.get('/', function (request, response) {
+  response.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Starts the server.
-server.listen(5000, function() {
-	console.log('Starting server on port 5000');
+server.listen(5000, function () {
+  console.log('Starting server on port 5000');
 });
 
-// Add the WebSocket handlers
-io.on('mouse', function(socket) {
-	console.log('Clicked');
-  io.sockets.emit('message', 'Done');
-});
+let x = 0;
 
-// Add the WebSocket handlers
-io.on('new', function(socket) {
-	console.log('Connection');
-  io.sockets.emit('message', 'Done');
-});
-
-setInterval(function() {
-  io.sockets.emit('message', 'hi!');
+setInterval(function () {
+  io.sockets.emit('message', x);
 }, 1000);
+
+io.on('mouse', function () {
+  x++;
+  io.sockets.emit('message', 'Done');
+});
+
+// Add the WebSocket handlers
+io.on('connection', function (socket) {
+
+  socket.on('mouse', function () {
+    x++;
+    console.log(x);
+    io.sockets.emit('message', 'Done');
+  });
+
+  socket.on('new', function () {
+    x++;
+    console.log(x);
+    io.sockets.emit('message', x);
+  });
+});
