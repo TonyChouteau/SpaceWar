@@ -22,6 +22,8 @@ server.listen(5000, function () {
   console.log('Starting server on port 5000');
 });
 
+//Variables
+
 let x = 0;
 
 setInterval(function () {
